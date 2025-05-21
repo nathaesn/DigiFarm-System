@@ -199,13 +199,6 @@ Each service page includes:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- Icons by [Lucide Icons](https://lucide.dev)
-- Design inspiration from modern agriculture platforms
-- Development tools and libraries from the open source community
-- Special thanks to all contributors and supporters
-
 ---
 
 Made with ❤️ by Andika Natha
