@@ -195,34 +195,9 @@ Each service page includes:
   - Hover effects
   - Loading states
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Team
-
-- **Andika Natha** - Lead Developer
-  - GitHub: [@yourusername](https://github.com/yourusername)
-  - LinkedIn: [Your Name](https://linkedin.com/in/yourusername)
-
-## 📞 Contact
-
-- **Website**: [digifarmtech.com](https://digifarmtech.com)
-- **Email**: contact@digifarmtech.com
-- **Twitter**: [@DigiFarmTech](https://twitter.com/DigiFarmTech)
-- **LinkedIn**: [DigiFarmTech](https://linkedin.com/company/digifarmtech)
 
 ## 🙏 Acknowledgments
 
