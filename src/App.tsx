@@ -17,12 +17,29 @@ import AdminUsers from './pages/admin/Users';
 import AdminCrops from './pages/admin/Crops';
 import AdminSubscriptions from './pages/admin/Subscriptions';
 
+// Service Pages
+import IoTIrrigationPage from './pages/services/IoTIrrigation';
+import CropMonitoringPage from './pages/services/CropMonitoring';
+import SoilAnalysisPage from './pages/services/SoilAnalysis';
+import WaterManagementPage from './pages/services/WaterManagement';
+import InventoryTrackingPage from './pages/services/InventoryTracking';
+import HarvestPredictionsPage from './pages/services/HarvestPredictions';
+
 // Public routes - accessible to all
 const PublicRoutes = () => (
   <Routes>
     <Route path="/" element={<Landing />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
+    
+    {/* Service Pages */}
+    <Route path="/services/irrigation" element={<IoTIrrigationPage />} />
+    <Route path="/services/crop-monitoring" element={<CropMonitoringPage />} />
+    <Route path="/services/soil-analysis" element={<SoilAnalysisPage />} />
+    <Route path="/services/water-management" element={<WaterManagementPage />} />
+    <Route path="/services/inventory" element={<InventoryTrackingPage />} />
+    <Route path="/services/harvest-predictions" element={<HarvestPredictionsPage />} />
+    
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="800" y2="600">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+    
+    <!-- Water Gradient -->
+    <linearGradient id="waterGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    
+    <!-- Water Drop Animation -->
+    <g id="waterDrop">
+      <path d="M0 0 Q5 -10 10 0 Q5 10 0 0" fill="#60A5FA" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.8;0.6" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Valve Animation -->
+    <g id="valve">
+      <circle cx="0" cy="0" r="15" fill="#4B5563"/>
+      <rect x="-2" y="-15" width="4" height="30" fill="#6B7280">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="90" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Sensor Animation -->
+    <g id="sensor">
+      <circle cx="0" cy="0" r="8" fill="#10B981">
+        <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="4" fill="white"/>
+    </g>
+    
+    <!-- Data Flow Animation -->
+    <path id="dataFlow" d="M0 0 L20 0" stroke="#10B981" stroke-width="2" stroke-dasharray="4">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </defs>
+  
+  <!-- Animated Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Water Reservoir -->
+  <g transform="translate(200, 300)">
+    <!-- Tank -->
+    <rect x="-100" y="-150" width="200" height="300" rx="10" fill="#1F2937"/>
+    <rect x="-90" y="-140" width="180" height="280" rx="5" fill="#374151"/>
+    
+    <!-- Water Level -->
+    <rect x="-85" y="50" width="170" height="200" fill="url(#waterGradient)">
+      <animate attributeName="y" values="50;40;50" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Water Surface -->
+    <path d="M-85 50 Q-42.5 40 0 50 Q42.5 60 85 50" stroke="#60A5FA" stroke-width="2" fill="none">
+      <animate attributeName="d" values="M-85 50 Q-42.5 40 0 50 Q42.5 60 85 50;M-85 40 Q-42.5 30 0 40 Q42.5 50 85 40;M-85 50 Q-42.5 40 0 50 Q42.5 60 85 50" dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Animated Water Drops -->
+    <g transform="translate(-60, -120)">
+      <use href="#waterDrop"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 20;0 0" dur="2s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(0, -120)">
+      <use href="#waterDrop"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 20;0 0" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </g>
+    <g transform="translate(60, -120)">
+      <use href="#waterDrop"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 20;0 0" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </g>
+  </g>
+  
+  <!-- Control Panel -->
+  <g transform="translate(500, 300)">
+    <rect x="-120" y="-100" width="240" height="200" rx="10" fill="#1F2937"/>
+    <text x="0" y="-80" text-anchor="middle" fill="white" font-size="16">Water Management</text>
+    
+    <!-- Water Level Indicator -->
+    <g transform="translate(-80, -60)">
+      <text x="0" y="0" fill="white" font-size="12">Level</text>
+      <rect x="0" y="10" width="100" height="10" rx="5" fill="#374151"/>
+      <rect x="0" y="10" width="75" height="10" rx="5" fill="#3B82F6">
+        <animate attributeName="width" values="75;80;75" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Flow Rate Indicator -->
+    <g transform="translate(-80, -30)">
+      <text x="0" y="0" fill="white" font-size="12">Flow</text>
+      <rect x="0" y="10" width="100" height="10" rx="5" fill="#374151"/>
+      <rect x="0" y="10" width="60" height="10" rx="5" fill="#10B981">
+        <animate attributeName="width" values="60;65;60" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Quality Indicator -->
+    <g transform="translate(-80, 0)">
+      <text x="0" y="0" fill="white" font-size="12">Quality</text>
+      <rect x="0" y="10" width="100" height="10" rx="5" fill="#374151"/>
+      <rect x="0" y="10" width="90" height="10" rx="5" fill="#10B981">
+        <animate attributeName="width" values="90;95;90" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Control Buttons -->
+    <g transform="translate(-80, 40)">
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#4B5563" class="hover:fill-[#6B7280] transition-colors"/>
+      <text x="40" y="20" text-anchor="middle" fill="white" font-size="12">Adjust Flow</text>
+    </g>
+    <g transform="translate(10, 40)">
+      <rect x="0" y="0" width="80" height="30" rx="5" fill="#4B5563" class="hover:fill-[#6B7280] transition-colors"/>
+      <text x="40" y="20" text-anchor="middle" fill="white" font-size="12">Test Quality</text>
+    </g>
+  </g>
+  
+  <!-- Pipes and Valves -->
+  <g stroke="#4B5563" stroke-width="8" fill="none">
+    <!-- Main Pipe -->
+    <path d="M300 300 L500 300"/>
+    
+    <!-- Branch Pipes -->
+    <path d="M400 300 L400 200"/>
+    <path d="M400 300 L400 400"/>
+    
+    <!-- Valves -->
+    <g transform="translate(400, 200)">
+      <use href="#valve"/>
+    </g>
+    <g transform="translate(400, 400)">
+      <use href="#valve"/>
+    </g>
+  </g>
+  
+  <!-- Sensors -->
+  <g transform="translate(350, 300)">
+    <use href="#sensor"/>
+  </g>
+  <g transform="translate(450, 300)">
+    <use href="#sensor"/>
+  </g>
+  <g transform="translate(400, 250)">
+    <use href="#sensor"/>
+  </g>
+  <g transform="translate(400, 350)">
+    <use href="#sensor"/>
+  </g>
+  
+  <!-- Animated Data Flow Lines -->
+  <g transform="translate(400, 300)">
+    <g transform="rotate(-45)">
+      <use href="#dataFlow"/>
+    </g>
+    <g transform="rotate(45)">
+      <use href="#dataFlow"/>
+    </g>
+    <g transform="rotate(135)">
+      <use href="#dataFlow"/>
+    </g>
+    <g transform="rotate(-135)">
+      <use href="#dataFlow"/>
+    </g>
+  </g>
+  
+  <!-- Water Quality Meter -->
+  <g transform="translate(600, 200)">
+    <rect x="-40" y="-60" width="80" height="120" rx="10" fill="#1F2937"/>
+    <text x="0" y="-40" text-anchor="middle" fill="white" font-size="12">Quality</text>
+    
+    <!-- Meter Needle -->
+    <g transform="translate(0, 0)">
+      <line x1="0" y1="0" x2="0" y2="-40" stroke="#10B981" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate" from="-45" to="45" dur="4s" repeatCount="indefinite"/>
+      </line>
+      <circle cx="0" cy="0" r="5" fill="#10B981"/>
+    </g>
+    
+    <!-- Meter Scale -->
+    <path d="M-30 -30 A30 30 0 0 1 30 -30" stroke="#374151" stroke-width="2" fill="none"/>
+    <text x="-25" y="-20" fill="white" font-size="10">Low</text>
+    <text x="20" y="-20" fill="white" font-size="10">High</text>
+  </g>
+  
+  <!-- Usage Graph -->
+  <g transform="translate(600, 400)">
+    <rect x="-60" y="-40" width="120" height="80" rx="10" fill="#1F2937"/>
+    <text x="0" y="-20" text-anchor="middle" fill="white" font-size="12">Usage</text>
+    
+    <!-- Graph Bars -->
+    <g transform="translate(-40, 20)">
+      <rect x="0" y="0" width="10" height="-30" fill="#3B82F6">
+        <animate attributeName="height" values="-30;-35;-30" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="15" y="0" width="10" height="-40" fill="#3B82F6">
+        <animate attributeName="height" values="-40;-45;-40" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </rect>
+      <rect x="30" y="0" width="10" height="-35" fill="#3B82F6">
+        <animate attributeName="height" values="-35;-40;-35" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      </rect>
+      <rect x="45" y="0" width="10" height="-45" fill="#3B82F6">
+        <animate attributeName="height" values="-45;-50;-45" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Interactive Elements -->
+  <g class="cursor-pointer">
+    <!-- Hover Tooltips -->
+    <g transform="translate(200, 300)">
+      <title>Water Reservoir - Current level: 75%</title>
+    </g>
+    <g transform="translate(500, 300)">
+      <title>Control Panel - Monitor and adjust water parameters</title>
+    </g>
+    <g transform="translate(400, 200)">
+      <title>Control Valve - Regulate water flow</title>
+    </g>
+    <g transform="translate(400, 400)">
+      <title>Control Valve - Regulate water flow</title>
+    </g>
+    <g transform="translate(600, 200)">
+      <title>Water Quality Meter - Real-time quality monitoring</title>
+    </g>
+    <g transform="translate(600, 400)">
+      <title>Usage Graph - Water consumption trends</title>
+    </g>
+  </g>
+</svg> 

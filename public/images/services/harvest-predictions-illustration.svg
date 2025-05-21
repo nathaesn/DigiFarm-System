@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="800" y2="600">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+    
+    <!-- AI Brain Network Gradient -->
+    <linearGradient id="brainGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    
+    <!-- Node Animation -->
+    <g id="node">
+      <circle r="15" fill="url(#brainGradient)">
+        <animate attributeName="r" values="15;17;15" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="5" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Connection Animation -->
+    <path id="connection" d="M0 0 L50 0" stroke="#10B981" stroke-width="2" stroke-dasharray="4">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Weather Icon Animation -->
+    <g id="weatherIcon">
+      <circle cx="0" cy="0" r="15" fill="#60A5FA" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M-5 -5 L5 -5 M-8 0 L8 0 M-5 5 L5 5" stroke="white" stroke-width="2">
+        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Crop Health Animation -->
+    <g id="cropHealth">
+      <path d="M0 -10 L5 0 L0 10 L-5 0 Z" fill="#10B981">
+        <animate attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <circle r="3" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Market Trend Animation -->
+    <g id="marketTrend">
+      <path d="M-10 0 L-5 -5 L0 0 L5 5 L10 0" stroke="#F59E0B" stroke-width="2" fill="none">
+        <animate attributeName="d" values="M-10 0 L-5 -5 L0 0 L5 5 L10 0;M-10 0 L-5 -3 L0 0 L5 3 L10 0;M-10 0 L-5 -5 L0 0 L5 5 L10 0" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </defs>
+  
+  <!-- Animated Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- AI Brain Network -->
+  <g transform="translate(400, 200)">
+    <!-- Central Node -->
+    <g class="hover:scale-105 transition-transform">
+      <use href="#node"/>
+      <text x="0" y="35" text-anchor="middle" fill="#1F2937" font-size="14">AI Brain</text>
+    </g>
+    
+    <!-- Connected Nodes -->
+    <g transform="translate(-150, -100)">
+      <use href="#node"/>
+      <text x="0" y="35" text-anchor="middle" fill="#1F2937" font-size="14">Weather</text>
+      <use href="#connection" transform="translate(25, 0) rotate(45)"/>
+    </g>
+    
+    <g transform="translate(150, -100)">
+      <use href="#node"/>
+      <text x="0" y="35" text-anchor="middle" fill="#1F2937" font-size="14">Soil</text>
+      <use href="#connection" transform="translate(-25, 0) rotate(-45)"/>
+    </g>
+    
+    <g transform="translate(-150, 100)">
+      <use href="#node"/>
+      <text x="0" y="35" text-anchor="middle" fill="#1F2937" font-size="14">Crop</text>
+      <use href="#connection" transform="translate(25, 0) rotate(-45)"/>
+    </g>
+    
+    <g transform="translate(150, 100)">
+      <use href="#node"/>
+      <text x="0" y="35" text-anchor="middle" fill="#1F2937" font-size="14">Market</text>
+      <use href="#connection" transform="translate(-25, 0) rotate(45)"/>
+    </g>
+  </g>
+  
+  <!-- Weather Data -->
+  <g transform="translate(200, 400)">
+    <rect x="-100" y="-60" width="200" height="120" rx="10" fill="#1F2937"/>
+    <text x="0" y="-40" text-anchor="middle" fill="white" font-size="16">Weather Data</text>
+    
+    <!-- Weather Metrics -->
+    <g transform="translate(-60, -20)">
+      <use href="#weatherIcon"/>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Temperature</text>
+      <text x="0" y="50" text-anchor="middle" fill="#60A5FA" font-size="14">24°C</text>
+    </g>
+    
+    <g transform="translate(0, -20)">
+      <circle cx="0" cy="0" r="15" fill="#60A5FA" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Humidity</text>
+      <text x="0" y="50" text-anchor="middle" fill="#60A5FA" font-size="14">65%</text>
+    </g>
+    
+    <g transform="translate(60, -20)">
+      <path d="M-10 -5 L10 -5 M-5 0 L5 0 M-10 5 L10 5" stroke="#60A5FA" stroke-width="2">
+        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Rainfall</text>
+      <text x="0" y="50" text-anchor="middle" fill="#60A5FA" font-size="14">2.5mm</text>
+    </g>
+  </g>
+  
+  <!-- Crop Health -->
+  <g transform="translate(400, 400)">
+    <rect x="-100" y="-60" width="200" height="120" rx="10" fill="#1F2937"/>
+    <text x="0" y="-40" text-anchor="middle" fill="white" font-size="16">Crop Health</text>
+    
+    <!-- Health Indicators -->
+    <g transform="translate(-60, -20)">
+      <use href="#cropHealth"/>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Health</text>
+      <text x="0" y="50" text-anchor="middle" fill="#10B981" font-size="14">92%</text>
+    </g>
+    
+    <g transform="translate(0, -20)">
+      <path d="M-10 -10 L10 -10 L0 10 Z" fill="#10B981">
+        <animate attributeName="transform" type="scale" values="1;1.1;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Growth</text>
+      <text x="0" y="50" text-anchor="middle" fill="#10B981" font-size="14">85%</text>
+    </g>
+    
+    <g transform="translate(60, -20)">
+      <circle cx="0" cy="0" r="15" fill="#10B981" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Yield</text>
+      <text x="0" y="50" text-anchor="middle" fill="#10B981" font-size="14">78%</text>
+    </g>
+  </g>
+  
+  <!-- Prediction Results -->
+  <g transform="translate(600, 400)">
+    <rect x="-100" y="-60" width="200" height="120" rx="10" fill="#1F2937"/>
+    <text x="0" y="-40" text-anchor="middle" fill="white" font-size="16">Predictions</text>
+    
+    <!-- Prediction Metrics -->
+    <g transform="translate(-60, -20)">
+      <use href="#marketTrend"/>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Yield</text>
+      <text x="0" y="50" text-anchor="middle" fill="#F59E0B" font-size="14">8.5t/ha</text>
+    </g>
+    
+    <g transform="translate(0, -20)">
+      <rect x="-10" y="-10" width="20" height="20" fill="#F59E0B">
+        <animate attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/>
+      </rect>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Date</text>
+      <text x="0" y="50" text-anchor="middle" fill="#F59E0B" font-size="14">Day 45</text>
+    </g>
+    
+    <g transform="translate(60, -20)">
+      <path d="M-10 -10 L10 -10 L0 10 Z" fill="#F59E0B">
+        <animate attributeName="transform" type="scale" values="1;1.1;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <text x="0" y="35" text-anchor="middle" fill="white" font-size="12">Quality</text>
+      <text x="0" y="50" text-anchor="middle" fill="#F59E0B" font-size="14">A+</text>
+    </g>
+  </g>
+  
+  <!-- Interactive Elements -->
+  <g class="cursor-pointer">
+    <!-- Hover Tooltips -->
+    <g transform="translate(400, 200)">
+      <title>AI Brain Network - Central prediction system</title>
+    </g>
+    <g transform="translate(200, 400)">
+      <title>Weather Data - Real-time environmental monitoring</title>
+    </g>
+    <g transform="translate(400, 400)">
+      <title>Crop Health - Current crop status analysis</title>
+    </g>
+    <g transform="translate(600, 400)">
+      <title>Predictions - AI-powered harvest forecasts</title>
+    </g>
+  </g>
+</svg> 

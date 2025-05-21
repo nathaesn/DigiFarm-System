@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="800" y2="600">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+    
+    <!-- Warehouse Gradient -->
+    <linearGradient id="warehouseGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F2937"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+    
+    <!-- QR Code Animation -->
+    <g id="qrCode">
+      <rect x="-15" y="-15" width="30" height="30" fill="white"/>
+      <rect x="-12" y="-12" width="24" height="24" fill="black"/>
+      <rect x="-8" y="-8" width="16" height="16" fill="white"/>
+      <rect x="-4" y="-4" width="8" height="8" fill="black"/>
+      <rect x="4" y="-4" width="4" height="4" fill="black"/>
+      <rect x="-4" y="4" width="4" height="4" fill="black"/>
+      <rect x="4" y="4" width="4" height="4" fill="black"/>
+      <rect x="8" y="8" width="4" height="4" fill="black"/>
+    </g>
+    
+    <!-- Scanner Animation -->
+    <g id="scanner">
+      <rect x="-20" y="-5" width="40" height="10" rx="5" fill="#1F2937"/>
+      <rect x="-15" y="-2" width="30" height="4" rx="2" fill="#10B981">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <path d="M-20 0 L20 0" stroke="#10B981" stroke-width="2" stroke-dasharray="4">
+        <animate attributeName="stroke-dashoffset" values="0;-8" dur="0.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Data Flow Animation -->
+    <path id="dataFlow" d="M0 0 L20 0" stroke="#10B981" stroke-width="2" stroke-dasharray="4">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </defs>
+  
+  <!-- Animated Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Warehouse Building -->
+  <g transform="translate(400, 300)">
+    <!-- Main Structure -->
+    <rect x="-200" y="-150" width="400" height="300" fill="url(#warehouseGradient)"/>
+    
+    <!-- Roof -->
+    <path d="M-220 -150 L220 -150 L200 -180 L-200 -180 Z" fill="#1F2937"/>
+    
+    <!-- Windows -->
+    <g fill="#60A5FA" opacity="0.8">
+      <rect x="-150" y="-100" width="40" height="60" rx="5">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-50" y="-100" width="40" height="60" rx="5">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </rect>
+      <rect x="50" y="-100" width="40" height="60" rx="5">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="3s" repeatCount="indefinite" begin="1s"/>
+      </rect>
+      <rect x="150" y="-100" width="40" height="60" rx="5">
+        <animate attributeName="opacity" values="0.8;0.6;0.8" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+      </rect>
+    </g>
+    
+    <!-- Door -->
+    <rect x="-30" y="0" width="60" height="150" fill="#4B5563"/>
+    <rect x="-20" y="10" width="40" height="40" rx="5" fill="#6B7280"/>
+  </g>
+  
+  <!-- Shelving Units -->
+  <g transform="translate(200, 300)">
+    <!-- Left Shelves -->
+    <g stroke="#4B5563" stroke-width="4">
+      <line x1="-100" y1="-100" x2="-100" y2="100"/>
+      <line x1="-100" y1="-100" x2="0" y2="-100"/>
+      <line x1="-100" y1="-50" x2="0" y2="-50"/>
+      <line x1="-100" y1="0" x2="0" y2="0"/>
+      <line x1="-100" y1="50" x2="0" y2="50"/>
+      <line x1="-100" y1="100" x2="0" y2="100"/>
+    </g>
+    
+    <!-- Inventory Items -->
+    <g transform="translate(-80, -80)">
+      <rect x="0" y="0" width="30" height="30" fill="#10B981">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+    <g transform="translate(-40, -80)">
+      <rect x="0" y="0" width="30" height="30" fill="#3B82F6">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+    <g transform="translate(-80, -30)">
+      <rect x="0" y="0" width="30" height="30" fill="#F59E0B">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+    <g transform="translate(-40, -30)">
+      <rect x="0" y="0" width="30" height="30" fill="#EF4444">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+  </g>
+  
+  <g transform="translate(600, 300)">
+    <!-- Right Shelves -->
+    <g stroke="#4B5563" stroke-width="4">
+      <line x1="0" y1="-100" x2="100" y2="-100"/>
+      <line x1="0" y1="-50" x2="100" y2="-50"/>
+      <line x1="0" y1="0" x2="100" y2="0"/>
+      <line x1="0" y1="50" x2="100" y2="50"/>
+      <line x1="0" y1="100" x2="100" y2="100"/>
+      <line x1="100" y1="-100" x2="100" y2="100"/>
+    </g>
+    
+    <!-- Inventory Items -->
+    <g transform="translate(20, -80)">
+      <rect x="0" y="0" width="30" height="30" fill="#10B981">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+    <g transform="translate(60, -80)">
+      <rect x="0" y="0" width="30" height="30" fill="#3B82F6">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+    <g transform="translate(20, -30)">
+      <rect x="0" y="0" width="30" height="30" fill="#F59E0B">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+    <g transform="translate(60, -30)">
+      <rect x="0" y="0" width="30" height="30" fill="#EF4444">
+        <animate attributeName="y" values="0;5;0" dur="2s" repeatCount="indefinite" begin="1.1s"/>
+      </rect>
+      <use href="#qrCode" transform="translate(15, 15) scale(0.5)"/>
+    </g>
+  </g>
+  
+  <!-- Control Panel -->
+  <g transform="translate(400, 500)">
+    <rect x="-120" y="-40" width="240" height="80" rx="10" fill="#1F2937"/>
+    <text x="0" y="-20" text-anchor="middle" fill="white" font-size="16">Inventory Control</text>
+    
+    <!-- Status Indicators -->
+    <g transform="translate(-80, 0)">
+      <text x="0" y="0" fill="white" font-size="12">Seeds</text>
+      <rect x="0" y="10" width="60" height="10" rx="5" fill="#374151"/>
+      <rect x="0" y="10" width="45" height="10" rx="5" fill="#10B981">
+        <animate attributeName="width" values="45;50;45" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <g transform="translate(0, 0)">
+      <text x="0" y="0" fill="white" font-size="12">Fertilizers</text>
+      <rect x="0" y="10" width="60" height="10" rx="5" fill="#374151"/>
+      <rect x="0" y="10" width="30" height="10" rx="5" fill="#F59E0B">
+        <animate attributeName="width" values="30;35;30" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <g transform="translate(80, 0)">
+      <text x="0" y="0" fill="white" font-size="12">Equipment</text>
+      <rect x="0" y="10" width="60" height="10" rx="5" fill="#374151"/>
+      <rect x="0" y="10" width="55" height="10" rx="5" fill="#3B82F6">
+        <animate attributeName="width" values="55;60;55" dur="2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Scanner Device -->
+  <g transform="translate(400, 200)">
+    <g class="hover:scale-105 transition-transform">
+      <use href="#scanner"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 20;0 0" dur="3s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Animated Data Flow Lines -->
+  <g transform="translate(400, 300)">
+    <g transform="rotate(-45)">
+      <use href="#dataFlow"/>
+    </g>
+    <g transform="rotate(45)">
+      <use href="#dataFlow"/>
+    </g>
+    <g transform="rotate(135)">
+      <use href="#dataFlow"/>
+    </g>
+    <g transform="rotate(-135)">
+      <use href="#dataFlow"/>
+    </g>
+  </g>
+  
+  <!-- Interactive Elements -->
+  <g class="cursor-pointer">
+    <!-- Hover Tooltips -->
+    <g transform="translate(400, 300)">
+      <title>Warehouse - Smart inventory management system</title>
+    </g>
+    <g transform="translate(200, 300)">
+      <title>Left Shelving Unit - Organized storage system</title>
+    </g>
+    <g transform="translate(600, 300)">
+      <title>Right Shelving Unit - Organized storage system</title>
+    </g>
+    <g transform="translate(400, 500)">
+      <title>Control Panel - Monitor inventory levels</title>
+    </g>
+    <g transform="translate(400, 200)">
+      <title>Scanner - Real-time inventory tracking</title>
+    </g>
+  </g>
+</svg> 

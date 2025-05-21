@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="800" y2="600">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+    
+    <!-- Drone Animation -->
+    <g id="drone">
+      <circle cx="0" cy="0" r="20" fill="#4B5563"/>
+      <rect x="-30" y="-5" width="60" height="10" rx="5" fill="#6B7280"/>
+      <rect x="-5" y="-30" width="10" height="60" rx="5" fill="#6B7280"/>
+      <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      <circle cx="0" cy="0" r="4" fill="#10B981"/>
+    </g>
+    
+    <!-- Propeller Animation -->
+    <g id="propeller">
+      <circle cx="0" cy="0" r="10" fill="#9CA3AF"/>
+      <path d="M-10 0 L10 0 M0 -10 L0 10" stroke="#4B5563" stroke-width="2">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Scan Beam Animation -->
+    <path id="scanBeam" d="M350 100 L450 100 L400 500 Z" fill="#10B981" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </defs>
+  
+  <!-- Animated Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Animated Field Grid -->
+  <g stroke="#9CA3AF" stroke-width="1" opacity="0.5">
+    <path d="M0 150 L800 150">
+      <animate attributeName="opacity" values="0.5;0.3;0.5" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 300 L800 300">
+      <animate attributeName="opacity" values="0.5;0.3;0.5" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </path>
+    <path d="M0 450 L800 450">
+      <animate attributeName="opacity" values="0.5;0.3;0.5" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </path>
+    <path d="M200 0 L200 600">
+      <animate attributeName="opacity" values="0.5;0.3;0.5" dur="3s" repeatCount="indefinite" begin="0.2s"/>
+    </path>
+    <path d="M400 0 L400 600">
+      <animate attributeName="opacity" values="0.5;0.3;0.5" dur="3s" repeatCount="indefinite" begin="0.7s"/>
+    </path>
+    <path d="M600 0 L600 600">
+      <animate attributeName="opacity" values="0.5;0.3;0.5" dur="3s" repeatCount="indefinite" begin="1.2s"/>
+    </path>
+  </g>
+  
+  <!-- Animated Drone -->
+  <g transform="translate(400, 100)">
+    <!-- Drone Body with Hover Effect -->
+    <g class="hover:scale-110 transition-transform">
+      <use href="#drone"/>
+      
+      <!-- Animated Propellers -->
+      <g transform="translate(-30, -30)">
+        <use href="#propeller"/>
+      </g>
+      <g transform="translate(30, -30)">
+        <use href="#propeller"/>
+      </g>
+      <g transform="translate(-30, 30)">
+        <use href="#propeller"/>
+      </g>
+      <g transform="translate(30, 30)">
+        <use href="#propeller"/>
+      </g>
+    </g>
+    
+    <!-- Drone Movement -->
+    <animateMotion path="M0 0 Q20 -20 0 -40 Q-20 -20 0 0" dur="4s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Animated Scanning Beam -->
+  <use href="#scanBeam"/>
+  
+  <!-- Animated Crops -->
+  <g transform="translate(200, 400)">
+    <path d="M0 0 L-15 -40 L0 -30 L15 -40 Z" fill="#22C55E">
+      <animate attributeName="d" values="M0 0 L-15 -40 L0 -30 L15 -40 Z;M0 0 L-17 -42 L0 -32 L17 -42 Z;M0 0 L-15 -40 L0 -30 L15 -40 Z" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 0 L-10 -25 L0 -15 L10 -25 Z" fill="#22C55E">
+      <animate attributeName="d" values="M0 0 L-10 -25 L0 -15 L10 -25 Z;M0 0 L-12 -27 L0 -17 L12 -27 Z;M0 0 L-10 -25 L0 -15 L10 -25 Z" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g transform="translate(400, 400)">
+    <path d="M0 0 L-15 -40 L0 -30 L15 -40 Z" fill="#22C55E">
+      <animate attributeName="d" values="M0 0 L-15 -40 L0 -30 L15 -40 Z;M0 0 L-17 -42 L0 -32 L17 -42 Z;M0 0 L-15 -40 L0 -30 L15 -40 Z" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 0 L-10 -25 L0 -15 L10 -25 Z" fill="#22C55E">
+      <animate attributeName="d" values="M0 0 L-10 -25 L0 -15 L10 -25 Z;M0 0 L-12 -27 L0 -17 L12 -27 Z;M0 0 L-10 -25 L0 -15 L10 -25 Z" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g transform="translate(600, 400)">
+    <path d="M0 0 L-15 -40 L0 -30 L15 -40 Z" fill="#22C55E">
+      <animate attributeName="d" values="M0 0 L-15 -40 L0 -30 L15 -40 Z;M0 0 L-17 -42 L0 -32 L17 -42 Z;M0 0 L-15 -40 L0 -30 L15 -40 Z" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 0 L-10 -25 L0 -15 L10 -25 Z" fill="#22C55E">
+      <animate attributeName="d" values="M0 0 L-10 -25 L0 -15 L10 -25 Z;M0 0 L-12 -27 L0 -17 L12 -27 Z;M0 0 L-10 -25 L0 -15 L10 -25 Z" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Animated Health Indicators -->
+  <g transform="translate(200, 350)">
+    <circle cx="0" cy="0" r="10" fill="#10B981">
+      <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-5 0 L5 0 M0 -5 L0 5" stroke="white" stroke-width="2">
+      <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g transform="translate(400, 350)">
+    <circle cx="0" cy="0" r="10" fill="#EF4444">
+      <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-5 0 L5 0" stroke="white" stroke-width="2">
+      <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g transform="translate(600, 350)">
+    <circle cx="0" cy="0" r="10" fill="#10B981">
+      <animate attributeName="r" values="10;12;10" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-5 0 L5 0 M0 -5 L0 5" stroke="white" stroke-width="2">
+      <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Animated Data Points -->
+  <g>
+    <circle cx="250" cy="200" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="250" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="350" cy="180" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <circle cx="400" cy="220" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </circle>
+    <circle cx="450" cy="280" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    <circle cx="500" cy="240" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle cx="550" cy="200" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="1.8s"/>
+    </circle>
+  </g>
+  
+  <!-- Animated Connection Lines -->
+  <g stroke="#10B981" stroke-width="2" stroke-dasharray="4" opacity="0.6">
+    <path d="M250 200 L400 100">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M300 250 L400 100">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite" begin="0.2s"/>
+    </path>
+    <path d="M350 180 L400 100">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite" begin="0.4s"/>
+    </path>
+    <path d="M400 220 L400 100">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite" begin="0.6s"/>
+    </path>
+    <path d="M450 280 L400 100">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite" begin="0.8s"/>
+    </path>
+    <path d="M500 240 L400 100">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite" begin="1s"/>
+    </path>
+    <path d="M550 200 L400 100">
+      <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite" begin="1.2s"/>
+    </path>
+  </g>
+  
+  <!-- Interactive Elements -->
+  <g class="cursor-pointer">
+    <!-- Hover Tooltips -->
+    <g transform="translate(400, 100)">
+      <title>Monitoring Drone - Real-time crop surveillance</title>
+    </g>
+    <g transform="translate(200, 350)">
+      <title>Healthy Crop Area - Optimal growth conditions</title>
+    </g>
+    <g transform="translate(400, 350)">
+      <title>Attention Required - Crop health issue detected</title>
+    </g>
+    <g transform="translate(600, 350)">
+      <title>Healthy Crop Area - Optimal growth conditions</title>
+    </g>
+  </g>
+</svg> 

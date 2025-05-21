@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { motion } from 'framer-motion';
+import NavbarDropdown from './NavbarDropdown';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,6 +66,7 @@ const Navbar = () => {
                     {item.label}
                   </Link>
                 ))}
+                <NavbarDropdown onClose={() => setIsOpen(false)} />
                 <Link to="/login" className="ml-4 btn btn-primary">Login</Link>
                 <Link to="/register" className="btn btn-secondary">Register</Link>
               </>
@@ -131,6 +133,53 @@ const Navbar = () => {
                     {item.label}
                   </Link>
                 ))}
+                <div className="px-3 py-2">
+                  <p className="text-gray-700 font-medium mb-2">Services</p>
+                  <div className="pl-4 space-y-2">
+                    <Link
+                      to="/services/irrigation"
+                      className="text-gray-600 hover:text-primary-600 block py-1 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      IoT Irrigation
+                    </Link>
+                    <Link
+                      to="/services/crop-monitoring"
+                      className="text-gray-600 hover:text-primary-600 block py-1 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Crop Monitoring
+                    </Link>
+                    <Link
+                      to="/services/soil-analysis"
+                      className="text-gray-600 hover:text-primary-600 block py-1 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Soil Analysis
+                    </Link>
+                    <Link
+                      to="/services/water-management"
+                      className="text-gray-600 hover:text-primary-600 block py-1 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Water Management
+                    </Link>
+                    <Link
+                      to="/services/inventory"
+                      className="text-gray-600 hover:text-primary-600 block py-1 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Inventory Tracking
+                    </Link>
+                    <Link
+                      to="/services/harvest-predictions"
+                      className="text-gray-600 hover:text-primary-600 block py-1 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Harvest Predictions
+                    </Link>
+                  </div>
+                </div>
                 <Link 
                   to="/login" 
                   className="block w-full text-center my-2 btn btn-primary"
