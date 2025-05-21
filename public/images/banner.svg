@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background with gradient -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.1"/>
+            <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.1"/>
+        </linearGradient>
+        
+        <!-- Service Icons -->
+        <symbol id="irrigation" viewBox="0 0 24 24">
+            <path d="M12 2L4 8v12h16V8L12 2z" fill="#10B981" opacity="0.8"/>
+            <path d="M12 6v12M8 10v8M16 10v8" stroke="#fff" stroke-width="2"/>
+        </symbol>
+        
+        <symbol id="monitoring" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#3B82F6" opacity="0.8"/>
+            <path d="M12 8v4l3 3" stroke="#fff" stroke-width="2" fill="none"/>
+        </symbol>
+        
+        <symbol id="soil" viewBox="0 0 24 24">
+            <path d="M4 18h16v-6H4v6z" fill="#F59E0B" opacity="0.8"/>
+            <path d="M8 12v6M12 12v6M16 12v6" stroke="#fff" stroke-width="2"/>
+        </symbol>
+        
+        <symbol id="water" viewBox="0 0 24 24">
+            <path d="M12 2c-4 0-8 4-8 8 0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8z" fill="#3B82F6" opacity="0.8"/>
+        </symbol>
+        
+        <symbol id="inventory" viewBox="0 0 24 24">
+            <rect x="4" y="4" width="16" height="16" fill="#10B981" opacity="0.8"/>
+            <path d="M8 8h8M8 12h8M8 16h4" stroke="#fff" stroke-width="2"/>
+        </symbol>
+        
+        <symbol id="predictions" viewBox="0 0 24 24">
+            <path d="M4 20h16M4 4l4 8 4-4 4 8 4-4" stroke="#F59E0B" stroke-width="2" fill="none"/>
+        </symbol>
+    </defs>
+
+    <!-- Background -->
+    <rect width="1200" height="400" fill="url(#bgGradient)"/>
+    
+    <!-- Decorative Elements -->
+    <g opacity="0.1">
+        <circle cx="200" cy="200" r="150" fill="#10B981"/>
+        <circle cx="1000" cy="200" r="150" fill="#3B82F6"/>
+    </g>
+    
+    <!-- Service Icons -->
+    <g transform="translate(200,200)">
+        <use href="#irrigation" width="48" height="48" x="-24" y="-24"/>
+    </g>
+    <g transform="translate(400,200)">
+        <use href="#monitoring" width="48" height="48" x="-24" y="-24"/>
+    </g>
+    <g transform="translate(600,200)">
+        <use href="#soil" width="48" height="48" x="-24" y="-24"/>
+    </g>
+    <g transform="translate(800,200)">
+        <use href="#water" width="48" height="48" x="-24" y="-24"/>
+    </g>
+    <g transform="translate(1000,200)">
+        <use href="#inventory" width="48" height="48" x="-24" y="-24"/>
+    </g>
+    <g transform="translate(1200,200)">
+        <use href="#predictions" width="48" height="48" x="-24" y="-24"/>
+    </g>
+    
+    <!-- Title -->
+    <text x="600" y="150" font-family="Inter, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#1F2937">
+        DigiFarmTech
+    </text>
+    <text x="600" y="200" font-family="Inter, sans-serif" font-size="24" text-anchor="middle" fill="#4B5563">
+        Smart Agriculture Solutions
+    </text>
+    
+    <!-- Connecting Lines -->
+    <path d="M200 200 L400 200 L600 200 L800 200 L1000 200" stroke="#1F2937" stroke-width="2" stroke-dasharray="4 4" opacity="0.2"/>
+</svg> 
